@@ -1,0 +1,216 @@
+.s-hero {
+    background-color: $purple;
+    margin-top: 119px;
+    padding-top: 39px;
+    .container {
+        @include flex(row, flex-start, space-between);
+    }
+    .text { 
+        width: 100%;
+        max-width: 550px;
+        h1 {
+            color: $white;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 48px;
+            line-height: 120%;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        p {
+            color: $white;
+            font-size: 18px;
+            line-height: 150%;
+            max-width: 448px;
+            margin-bottom: 32px;
+        }
+    }
+    button {
+        @include style-btn(54px, $yellow, #503387);
+        margin-bottom: 36px;
+        }
+    .conheca {
+        display: flex;
+        align-items: center;
+        }
+    .icon {
+            border-radius: 6px;
+            background-color: rgba(123, 98, 185, 0.4);
+            width: 42px;
+            height: 42px;
+            @include flex(row, center, center)
+        }
+    span {
+            color: $white;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 16px;
+            line-height: 19px;
+        }
+    .image {
+            position: relative;
+            top: 34px;
+        }
+    @include responsive(991px) {
+        .container {
+            flex-direction: column;
+        }
+        .text {
+            max-width: 100%;
+            margin-bottom: 30px;
+            h1 {
+                text-align: center;
+            }
+            p {
+                max-width: 100%;
+                text-align: center;
+            }
+            button {
+                margin: 0 auto;
+                margin-bottom: 40px;
+                display: block;
+            }
+            .conheca {
+                justify-content: center;
+            }
+        }
+    }
+    @include responsive(600px) {
+        margin-top: 8rem;
+        .text {
+            h1 {
+                font-size: 4.2rem;
+            }
+        }
+        .image {
+            left: -9px;
+        }
+    }
+    
+}
+
+.s-resources {
+   padding-top: 149px;
+   padding-bottom: 99px;
+   .top {
+    @include flex(row, center, space-between);
+    margin-bottom: 53px;
+    h2 {
+        color: &gray_01;
+        font-family: 'PT Sans', sans-serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 130%;
+        max-width: 502px;
+    }
+    p {
+        color: $gray_02;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+    }
+   }
+   .content {
+    @include flex(row, flex-start, space-between);
+    .icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        background-color: rgba(197, 190, 220, 0.1);
+        @include flex(row, center, center);
+        margin-bottom: 30px;
+    }
+    .info {
+        max-width: 239px;
+        h4 {
+            color: $purple;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: $gray_02;
+            font-size: 16px;
+            line-height: 165%;
+        }
+    }
+    .card-featured {
+        width: 100%;
+        max-width: 280px;
+        height: 323px;
+        border-radius: 12px;
+        background-color: rgba(197, 190, 220, 0.1);
+        padding-top: 41px;
+        padding-left: 42px;
+        .icon {
+            background-color: white;
+        }
+        .info {
+            max-width: 204px;
+        }
+    }
+    ul {
+        margin-top: 41px;
+        width: 100%;
+        max-width: 904px;
+        @include flex(row, flex-start, space-between);
+        border-bottom: 3px solid rgba(95, 60, 161, 0.1);
+        padding-bottom: 65px;
+        padding-left: 20px;
+    }
+   }
+   @include responsive(991px) {
+    .content {
+        flex-direction: column;
+        align-items: flex-start;
+        .card-featured {
+            max-width: 100%;
+            height: auto;
+            padding: 30px;
+            @include flex(column, center, center);
+            .info {
+                max-width: 100%;
+                h4, p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+   }
+   @include responsive(768px) {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        .top {
+            flex-direction: column;
+            h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+        .content {
+            ul {
+                gap: 25px;
+            }
+        }
+   }
+   @include responsive(480px) {
+    padding-top: 6px;
+    .content {
+        ul {
+            flex-direction: column;
+            padding-left: 0px;
+            padding-top: 3px;
+            li {
+                @include flex(column, center, center);
+                h4, p {
+                    text-align: center;
+                }
+            }
+        }
+        .info {
+            max-width: 95%;
+        }
+    }
+   }
+}
